@@ -16,6 +16,15 @@
       --link:#7aa2ff;
       --border:#1b1e27;
     }
+    body.light-theme {
+      --bg: #ffffff;
+      --card: #f7f8fa;
+      --text: #0b0c10;
+      --muted: #475069;
+      --accent: #0ea5e9;
+      --link: #2563eb;
+      --border: #e5e7eb;
+    }
     @media (prefers-color-scheme: light){
       :root{
         --bg:#ffffff; --card:#f7f8fa; --text:#0b0c10; --muted:#475069; --accent:#0ea5e9; --link:#2563eb; --border:#e5e7eb;
@@ -25,7 +34,7 @@
     html,body{height:100%}
     body{
       margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text); background:var(--bg);
+      color:var(--text); background:var(--bg); transition: background 0.3s, color 0.3s;
     }
     .container{max-width:1000px; margin:0 auto; padding:24px}
     header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:color-mix(in oklab, var(--bg), transparent 35%); border-bottom:1px solid var(--border);}
@@ -151,6 +160,20 @@
 
     // Year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+    const btn = document.getElementById('themeBtn');
+
+    // Initialize based on system preference
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      document.body.classList.add('light-theme');
+    }
+
+    // Toggle on button click
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+    });
   </script>
 
   <!--
