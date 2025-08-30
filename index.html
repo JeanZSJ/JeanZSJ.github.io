@@ -135,28 +135,28 @@
   </div>
 
   <script>
-    // Minimal theme toggle
-    const themeBtn = document.getElementById('themeBtn');
-    const root = document.documentElement;
-    const KEY = 'theme';
-    function setTheme(mode){
-      if(mode==='light'){
-        root.style.colorScheme='light';
-        localStorage.setItem(KEY,'light');
-      } else if(mode==='dark'){
-        root.style.colorScheme='dark';
-        localStorage.setItem(KEY,'dark');
-      } else {
-        root.style.colorScheme='normal';
-        localStorage.removeItem(KEY);
-      }
-    }
-    const saved = localStorage.getItem(KEY);
-    if(saved) setTheme(saved);
-    themeBtn.addEventListener('click', ()=>{
-      const current = localStorage.getItem(KEY);
-      setTheme(current==='dark' ? 'light' : 'dark');
-    });
+    // // Minimal theme toggle
+    // const themeBtn = document.getElementById('themeBtn');
+    // const root = document.documentElement;
+    // const KEY = 'theme';
+    // function setTheme(mode){
+    //   if(mode==='light'){
+    //     root.style.colorScheme='light';
+    //     localStorage.setItem(KEY,'light');
+    //   } else if(mode==='dark'){
+    //     root.style.colorScheme='dark';
+    //     localStorage.setItem(KEY,'dark');
+    //   } else {
+    //     root.style.colorScheme='normal';
+    //     localStorage.removeItem(KEY);
+    //   }
+    // }
+    // const saved = localStorage.getItem(KEY);
+    // if(saved) setTheme(saved);
+    // themeBtn.addEventListener('click', ()=>{
+    //   const current = localStorage.getItem(KEY);
+    //   setTheme(current==='dark' ? 'light' : 'dark');
+    // });
 
     // Year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
